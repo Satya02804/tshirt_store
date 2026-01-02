@@ -57,40 +57,23 @@ cd tshirt-store
 
 2️⃣ Install Dependencies \
 composer install \
-<<<<<<< HEAD
 npm install 
 
 3️⃣ Environment Setup \
 cp .env.example .env \
 php artisan key:generate 
 
-
 Update .env with your database credentials.  
 
 4️⃣ Run Database 
-=======
-npm install \
 
-3️⃣ Environment Setup \
-cp .env.example .env \
-php artisan key:generate \
-
-
-Update .env with your database credentials.  \
-
-4️⃣ Run Database \ 
->>>>>>> 0b7277385124d653d2c5c03fee0196f001288c1d
 php artisan migrate \
 php artisan db:seed   # Optional
 
 5️⃣ Run Project \
-php artisan serve \
-<<<<<<< HEAD
-npm run dev 
-=======
-npm run dev \
->>>>>>> 0b7277385124d653d2c5c03fee0196f001288c1d
+php artisan serve 
 
+npm run dev
 
 Visit 👉 http://127.0.0.1:8000
 
