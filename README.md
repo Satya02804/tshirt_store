@@ -10,45 +10,18 @@ Coming Soon
 
 
 ## tshirt_store/
-├── app/
-│   ├── Http/
-│   │   └── Controllers/        # Controllers
-│   └── Models/                # Database models
-│
-├── bootstrap/                 # Framework bootstrap
-├── config/                    # Configuration files
-│
-├── database/
-│   ├── migrations/            # Database tables
-│   └── seeders/               # Sample data
-│
-├── public/
-│   ├── css/                   # Compiled CSS
-│   ├── js/                    # Compiled JS
-│   ├── images/                # Images
-│   └── index.php              # Entry point
-│
-├── resources/
-│   ├── views/                 # Blade templates
-│   ├── css/                   # Source CSS
-│   └── js/                    # Source JS
-│
-├── routes/
-│   ├── web.php                # Web routes
-│   └── api.php                # API routes
-│
-├── storage/                   # Logs & uploads
-├── tests/                     # Tests
-├── vendor/                    # Composer dependencies
-│
-├── .env.example               # Environment template
-├── artisan                    # Laravel CLI
-├── composer.json              # PHP dependencies
-├── package.json               # Node dependencies
-├── vite.config.js             # Vite config
-└── README.md                  # Project documentation
 
-
+├── index.html          # Main HTML file
+├── styles.css          # CSS styles
+├── script.js           # JavaScript functionality
+├── server.js           # Node.js server
+├── public/             # Static files
+│   ├── index.html      # Test form page
+│   └── admin.html      # Admin page to view submissions
+├── submissions/        # Directory for storing form submissions
+├── .env                # Environment variables
+├── package.json        # Project dependencies
+└── README.md           # Project documentation
 ## ⚙️ Installation
 
 1️⃣ Clone Repository
