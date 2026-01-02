@@ -1,4 +1,6 @@
-/* General Layout */
+/* --- Fonts & Base --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 body {
     background-color: #f3f4f6;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -7,7 +9,20 @@ body {
     overflow-x: hidden;
 }
 
-/* Card Styling */
+/* --- Navigation --- */
+.navbar {
+    background: #ffffff !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    padding: 10px 0;
+}
+
+.navbar .badge {
+    font-size: 0.9rem;
+    padding: 0.5em 0.8em;
+    border-radius: 6px;
+}
+
+/* --- Card Styling --- */
 .card {
     border: none;
     border-radius: 12px;
@@ -16,39 +31,29 @@ body {
     background-color: #fff;
     margin-bottom: 20px;
 }
-.navbar {
-    background: #ffffff !important;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    padding: 10px 0;
-}
 
-/* Header Badge */
-.navbar .badge {
-    font-size: 0.9rem;
-    padding: 0.5em 0.8em;
-    border-radius: 6px;
-}
-
-/* Order Summary Section */
+/* --- Order Summary / Checkout Items --- */
 #checkout-items {
     max-height: 500px;
-    overflow-y: auto; /* Scroll if list is very long */
-    scrollbar-width: thin; /* For Firefox */
+    overflow-y: auto;
+    scrollbar-width: thin; /* Firefox */
 }
 
-/* Custom Scrollbar for Items */
+/* Custom Scrollbar (Chrome/Safari) */
 #checkout-items::-webkit-scrollbar {
     width: 6px;
 }
+
 #checkout-items::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
+
 #checkout-items::-webkit-scrollbar-thumb {
     background: #c1c1c1;
     border-radius: 10px;
 }
 
-/* Product Item Styling */
+/* Product Item Details */
 .checkout-item-img {
     width: 70px;
     height: 70px;
@@ -60,6 +65,7 @@ body {
 .item-details h6 {
     font-weight: 600;
     color: #333;
+    margin-bottom: 0.25rem;
 }
 
 .item-price {
@@ -67,7 +73,7 @@ body {
     color: #2c3e50;
 }
 
-/* Checkout Form Inputs */
+/* --- Forms & Inputs --- */
 .form-control {
     border-radius: 8px;
     padding: 10px 15px;
@@ -85,7 +91,28 @@ body {
     margin-bottom: 0.4rem;
 }
 
-/* Total Amount Section */
+/* --- Payment Options (Merged) --- */
+.payment-option {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: #fff;
+}
+
+.payment-option:hover {
+    background-color: #f8f9fa;
+    border-color: #0d6efd;
+}
+
+.payment-option.selected {
+    border-color: #0d6efd;
+    background-color: #f0f8ff;
+    box-shadow: 0 0 0 1px #0d6efd;
+}
+
+/* --- Totals & Actions --- */
 #totalAmount {
     color: #198754; /* Success Green */
     font-weight: 700;
@@ -112,15 +139,51 @@ body {
     padding: 10px;
 }
 
-.error {
-    color: #dc3545; /* Red color */
-    font-size: 0.875rem; /* Slightly smaller text */
+/* Back Button (Merged) */
+.back-btn {
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    margin: 0 5px;
+    border: none;
+    background: transparent;
+    color: #6c757d;
+    text-decoration: none;
+    padding: 6px 12px;
+    font-weight: 500;
 }
+
+.back-btn:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    background: #000000;
+    left: 0%;
+    height: 2px;
+    bottom: 0;
+    transition: all .3s;
+    opacity: 0.7;
+}
+
+.back-btn:hover:before {
+    width: 100%;
+    left: 0%;
+}
+
+/* --- Utility --- */
+.error {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
 .error.d-none {
     display: none;
 }
 
-/* Responsive adjustments */
+/* --- Responsive --- */
 @media (max-width: 768px) {
     .container {
         margin-top: 2rem !important;

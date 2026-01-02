@@ -20,6 +20,7 @@ body {
     font-family: 'Inter', sans-serif;
     color: #334155;
     font-size: 0.95rem;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* --- Navigation --- */
@@ -50,6 +51,7 @@ body {
     transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.1);
 }
 
 .sidenav a {
@@ -61,6 +63,7 @@ body {
     transition: 0.2s;
     font-weight: 500;
     border-left: 3px solid transparent;
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
 .sidenav a:hover {
@@ -82,10 +85,10 @@ body {
     margin-top: auto;
     border-top: 1px solid #1e293b;
     padding: 10px 0;
+    margin-bottom: 20px; /* Safe space for bottom nav on mobile */
 }
 
 /* --- Dashboard Cards --- */
-/* We target the specific border classes to style the whole card */
 .card {
     background: #fff;
     border: 1px solid var(--border);
@@ -127,13 +130,12 @@ body {
     background-color: var(--light);
 }
 
-/* Icon Colors based on parent border class */
+/* Icon Colors */
 .border-success .card-title i { color: var(--success); background: #d1fae5; }
 .border-info .card-title i { color: var(--info); background: #dbeafe; }
 .border-warning .card-title i { color: var(--warning); background: #fef3c7; }
 .border-danger .card-title i { color: var(--danger); background: #fee2e2; }
 
-/* Keep the left border accent but make it subtle */
 .border-success, .border-info, .border-warning, .border-danger {
     border-left-width: 4px !important;
 }
@@ -159,21 +161,9 @@ body {
     border-radius: 16px 16px 0 0;
 }
 
-.modal-title {
-    font-weight: 700;
-    color: var(--dark);
-}
-
 .modal-body {
     background-color: #f8fafc;
     padding: 2rem;
-}
-
-.modal-footer {
-    padding: 1.25rem 1.5rem;
-    background-color: #fff;
-    border-top: 1px solid var(--border);
-    border-radius: 0 0 16px 16px;
 }
 
 /* --- Permissions Section --- */
@@ -186,118 +176,86 @@ body {
     box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
-.permission-section h6 {
-    font-weight: 700;
-    color: var(--dark);
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--light);
-    display: flex;
-    align-items: center;
+/* Responsive Grid for Permissions */
+/* Force 1 column on mobile, 2 on tablet, 5 on desktop */
+.permission-section .row {
+    --bs-gutter-x: 0.75rem;
+    --bs-gutter-y: 0.75rem;
 }
 
-.role-badge {
-    font-size: 0.7rem;
-    padding: 4px 8px;
-    border-radius: 6px;
-    margin-left: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-weight: 600;
-}
-.badge-super-admin { background: #fee2e2; color: #991b1b; }
-.badge-admin { background: #fef3c7; color: #92400e; }
-.badge-user { background: #dbeafe; color: #1e40af; }
-
-/* THE PERMISSION TILES
-   Targeting your existing HTML structure: <label class="p-3">
-*/
 .permission-section .col label.p-3 {
     display: flex !important;
     align-items: center;
     gap: 10px;
     width: 100%;
-    height: 100%;
+    min-height: 50px; /* Ensure touch target size */
     background-color: #ffffff;
     border: 1px solid var(--border);
     border-radius: 8px;
-    padding: 12px 16px !important; /* Overriding bootstrap p-3 for better fit */
+    padding: 10px 14px !important;
     cursor: pointer;
     transition: all 0.2s ease;
     font-weight: 500;
     color: var(--secondary);
-    user-select: none;
+    font-size: 0.9rem; /* Slightly smaller text for mobile grid */
+    line-height: 1.2;
 }
 
-/* Hover State */
-.permission-section .col label.p-3:hover {
-    border-color: var(--primary);
-    background-color: #f8fafc;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    color: var(--dark);
-}
-
-/* CHECKED STATE MAGIC
-   Using :has() to style the parent LABEL when the INPUT inside is checked
-*/
+/* Checked State */
 .permission-section .col label.p-3:has(input:checked) {
     background-color: var(--primary-light);
     border-color: var(--primary);
     color: var(--primary);
     font-weight: 600;
-    box-shadow: 0 1px 3px rgba(79, 70, 229, 0.1);
 }
 
-/* Styling the Checkbox Input itself */
 .permission-section input[type="checkbox"] {
     width: 18px;
     height: 18px;
-    accent-color: var(--primary); /* Makes the checkbox blue */
+    accent-color: var(--primary);
     cursor: pointer;
     margin-right: 8px;
+    flex-shrink: 0; /* Prevent checkbox from shrinking */
 }
 
-/* Disabled State */
-.permission-section .col label.p-3:has(input:disabled) {
-    background-color: #f1f5f9;
-    color: #94a3b8;
-    border-color: #e2e8f0;
-    cursor: not-allowed;
-    transform: none;
-    box-shadow: none;
-}
+/* --- Mobile Responsiveness Adjustments --- */
+@media screen and (max-width: 768px) {
+    /* Navbar Adjustments */
+    .navbar-brand span {
+        display: none; /* Hide brand text on very small screens if needed */
+    }
 
-.permission-section input[type="checkbox"]:disabled {
-    cursor: not-allowed;
-}
+    /* Sidebar: Full width on mobile when opened */
+    .sidenav.active {
+        width: 100% !important;
+    }
 
-/* Buttons */
-.btn {
-    padding: 0.6rem 1.2rem;
-    font-weight: 500;
-    border-radius: 8px;
-    transition: all 0.2s;
-}
+    /* Modal Adjustments */
+    .modal-body {
+        padding: 1rem; /* Less padding on mobile */
+    }
 
-.btn-primary {
-    background-color: var(--primary);
-    border-color: var(--primary);
-    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
-}
+    .permission-section {
+        padding: 15px;
+    }
 
-.btn-primary:hover {
-    background-color: #4338ca;
-    border-color: #4338ca;
-}
+    /* Dashboard Grid: 1 column on mobile */
+    .row-cols-md-3 > * {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 
-.btn-secondary {
-    background-color: #fff;
-    color: #64748b;
-    border: 1px solid var(--border);
-}
+    /* Permission Grid: 1 column on mobile */
+    .row-cols-lg-5 > * {
+        flex: 0 0 100%;
+        width: 100%;
+    }
 
-.btn-secondary:hover {
-    background-color: #f1f5f9;
-    color: #0f172a;
+    /* Or 2 columns on mobile if space permits */
+    @media (min-width: 400px) {
+        .row-cols-lg-5 > * {
+            flex: 0 0 50%;
+            width: 50%;
+        }
+    }
 }
