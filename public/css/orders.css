@@ -1,0 +1,183 @@
+/* --- Fonts & Variables --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary: #4f46e5;
+    --text-main: #334155;
+    --text-light: #64748b;
+    --bg-light: #f8fafc;
+    --border: #e2e8f0;
+}
+
+body {
+    background-color: #f3f5f9;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    font-size: 0.95rem;
+}
+
+/* --- Breadcrumbs --- */
+.breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.breadcrumb-item a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.breadcrumb-item a:hover {
+    color: var(--primary);
+}
+
+.breadcrumb-item.active {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* --- Typography --- */
+h3.text-muted {
+    font-weight: 700;
+    color: #1e293b !important;
+    letter-spacing: -0.5px;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Main Table Styling --- */
+.table-responsive {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    padding: 0; /* Bootstrap adds padding, resetting for cleaner look */
+    border: 1px solid var(--border);
+    overflow: hidden; /* For rounded corners */
+}
+
+.table {
+    margin-bottom: 0;
+    border-collapse: collapse;
+}
+
+/* Header */
+.thead tr {
+    background-color: #f9fafb;
+    border-bottom: 1px solid var(--border);
+}
+
+.thead th {
+    color: var(--text-light);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    padding: 1rem 1.5rem;
+    border: none;
+}
+
+/* Body */
+.table tbody tr {
+    transition: background-color 0.2s;
+}
+
+.table tbody td {
+    vertical-align: middle;
+    padding: 1rem 1.5rem;
+    color: var(--text-main);
+    font-weight: 500;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+/* --- Badges & Elements --- */
+.badge {
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.75rem;
+    letter-spacing: 0.3px;
+}
+
+/* Specific Badge for Item Count */
+.badge.bg-light.text-dark {
+    background-color: #f1f5f9 !important;
+    color: #475569 !important;
+    border: 1px solid #e2e8f0 !important;
+}
+
+/* Action Icon (Eye) Hover Effect */
+a svg.bi-eye {
+    transition: all 0.2s ease;
+}
+
+a:hover svg.bi-eye {
+    background-color: #e0e7ff !important; /* Light indigo bg */
+    fill: #4338ca !important; /* Darker indigo icon */
+}
+
+/* --- Modal Styling --- */
+.modal-content {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.modal-header {
+    background-color: #fff;
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem 1.5rem;
+    border-radius: 16px 16px 0 0;
+}
+
+.modal-title {
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.modal-body {
+    background-color: #fff;
+    padding: 1.5rem;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--border);
+    padding: 1rem 1.5rem;
+    background-color: #f8fafc;
+    border-radius: 0 0 16px 16px;
+}
+
+.numeric-alignment {
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.3px;
+}
+
+#modalItemsBody img {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 2px;
+    background: #fff;
+}
+
+/* Modal Inner Table */
+.modal-body .table-responsive {
+    box-shadow: none;
+    border: 1px solid var(--border);
+}
+
+.modal-body .table thead th {
+    background-color: #f8fafc;
+    padding: 0.75rem 1rem;
+}
+
+.modal-body .table tbody td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.modal-body tfoot td {
+    padding: 1rem;
+    background-color: #f8fafc;
+}

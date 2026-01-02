@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary: #4f46e5;
+    --primary-light: #eef2ff;
+    --secondary: #64748b;
+    --success: #10b981;
+    --info: #3b82f6;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --dark: #1e293b;
+    --light: #f8fafc;
+    --border: #e2e8f0;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+
+body {
+    background-color: #f1f5f9;
+    font-family: 'Inter', sans-serif;
+    color: #334155;
+    font-size: 0.95rem;
+}
+
+/* --- Navigation --- */
+.navbar {
+    background: #ffffff !important;
+    border-bottom: 1px solid var(--border);
+    padding: 0.8rem 1rem;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+.navbar-brand strong {
+    font-weight: 700;
+    color: var(--dark);
+    letter-spacing: -0.5px;
+}
+
+/* --- Sidebar --- */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1050;
+    top: 0;
+    left: 0;
+    background-color: #0f172a; /* Dark Navy */
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidenav a {
+    padding: 14px 24px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #94a3b8;
+    display: block;
+    transition: 0.2s;
+    font-weight: 500;
+    border-left: 3px solid transparent;
+}
+
+.sidenav a:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.05);
+    border-left-color: var(--primary);
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    margin-left: 0;
+    color: #fff;
+}
+
+.sidenav .bottom {
+    margin-top: auto;
+    border-top: 1px solid #1e293b;
+    padding: 10px 0;
+}
+
+/* --- Dashboard Cards --- */
+/* We target the specific border classes to style the whole card */
+.card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--secondary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+}
+
+.card-title i {
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--light);
+}
+
+/* Icon Colors based on parent border class */
+.border-success .card-title i { color: var(--success); background: #d1fae5; }
+.border-info .card-title i { color: var(--info); background: #dbeafe; }
+.border-warning .card-title i { color: var(--warning); background: #fef3c7; }
+.border-danger .card-title i { color: var(--danger); background: #fee2e2; }
+
+/* Keep the left border accent but make it subtle */
+.border-success, .border-info, .border-warning, .border-danger {
+    border-left-width: 4px !important;
+}
+
+.card h5 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin: 0;
+}
+
+/* --- Modal Styling --- */
+.modal-content {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.modal-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    background-color: #fff;
+    border-radius: 16px 16px 0 0;
+}
+
+.modal-title {
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.modal-body {
+    background-color: #f8fafc;
+    padding: 2rem;
+}
+
+.modal-footer {
+    padding: 1.25rem 1.5rem;
+    background-color: #fff;
+    border-top: 1px solid var(--border);
+    border-radius: 0 0 16px 16px;
+}
+
+/* --- Permissions Section --- */
+.permission-section {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.permission-section h6 {
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--light);
+    display: flex;
+    align-items: center;
+}
+
+.role-badge {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    border-radius: 6px;
+    margin-left: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+.badge-super-admin { background: #fee2e2; color: #991b1b; }
+.badge-admin { background: #fef3c7; color: #92400e; }
+.badge-user { background: #dbeafe; color: #1e40af; }
+
+/* THE PERMISSION TILES
+   Targeting your existing HTML structure: <label class="p-3">
+*/
+.permission-section .col label.p-3 {
+    display: flex !important;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px !important; /* Overriding bootstrap p-3 for better fit */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    color: var(--secondary);
+    user-select: none;
+}
+
+/* Hover State */
+.permission-section .col label.p-3:hover {
+    border-color: var(--primary);
+    background-color: #f8fafc;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    color: var(--dark);
+}
+
+/* CHECKED STATE MAGIC
+   Using :has() to style the parent LABEL when the INPUT inside is checked
+*/
+.permission-section .col label.p-3:has(input:checked) {
+    background-color: var(--primary-light);
+    border-color: var(--primary);
+    color: var(--primary);
+    font-weight: 600;
+    box-shadow: 0 1px 3px rgba(79, 70, 229, 0.1);
+}
+
+/* Styling the Checkbox Input itself */
+.permission-section input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary); /* Makes the checkbox blue */
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+/* Disabled State */
+.permission-section .col label.p-3:has(input:disabled) {
+    background-color: #f1f5f9;
+    color: #94a3b8;
+    border-color: #e2e8f0;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.permission-section input[type="checkbox"]:disabled {
+    cursor: not-allowed;
+}
+
+/* Buttons */
+.btn {
+    padding: 0.6rem 1.2rem;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
+}
+
+.btn-primary:hover {
+    background-color: #4338ca;
+    border-color: #4338ca;
+}
+
+.btn-secondary {
+    background-color: #fff;
+    color: #64748b;
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    background-color: #f1f5f9;
+    color: #0f172a;
+}
