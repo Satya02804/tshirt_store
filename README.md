@@ -51,29 +51,34 @@ Coming Soon
 ## ⚙️ Installation
 
 1️⃣ Clone Repository
-git clone https://github.com/Satya02804/tshirt_store.git \
+```
+git clone https://github.com/Satya02804/tshirt_store.git 
 cd tshirt-store
+```
 
-2️⃣ Install Dependencies \
-composer install \
+2️⃣ Install Dependencies 
+```
+composer install 
 npm install 
-
-3️⃣ Environment Setup \
-cp .env.example .env \
+```
+3️⃣ Environment Setup 
+```
+cp .env.example .env 
 php artisan key:generate 
 
 Update .env with your database credentials.  
-
+```
 4️⃣ Run Database 
-
-php artisan migrate \
+```
+php artisan migrate 
 php artisan db:seed   # Optional
-
-5️⃣ Run Project \
+```
+5️⃣ Run Project 
+```
 php artisan serve 
 
 npm run dev
-
+```
 Visit 👉 http://127.0.0.1:8000
 
 ## ✨ Features
@@ -101,6 +106,17 @@ Visit 👉 http://127.0.0.1:8000
 | Package Manager | Composer, NPM         |
 
 ```
+⚠️ Disclaimer (Educational Use Only)
+
+All T-shirt images, product names, and related media used in this project are sourced from chriscross.in.
+
+This project is created strictly for educational and learning purposes only.
+
+❌ This project is not intended for commercial use, resale, or profit.
+
+All rights to the original images and brand assets belong to their respective owners.
+
+This project is not affiliated with or endorsed by chriscross.in.
 ## 📌 Future Improvements
 
 Payment gateway integration
