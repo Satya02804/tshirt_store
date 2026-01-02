@@ -52,7 +52,7 @@ tshirt_store/
 ## ⚙️ Installation
 
 1️⃣ Clone Repository
-git clone https://github.com/your-username/tshirt-store.git
+git clone https://github.com/Satya02804/tshirt_store.git
 cd tshirt-store
 
 2️⃣ Install Dependencies
