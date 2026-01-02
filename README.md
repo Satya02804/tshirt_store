@@ -52,27 +52,27 @@ Coming Soon
 ## ⚙️ Installation
 
 1️⃣ Clone Repository
-git clone https://github.com/Satya02804/tshirt_store.git
+git clone https://github.com/Satya02804/tshirt_store.git \
 cd tshirt-store
 
-2️⃣ Install Dependencies
-composer install
-npm install
+2️⃣ Install Dependencies \
+composer install \
+npm install \
 
-3️⃣ Environment Setup
-cp .env.example .env
-php artisan key:generate
+3️⃣ Environment Setup \
+cp .env.example .env \
+php artisan key:generate \
 
 
-Update .env with your database credentials.
+Update .env with your database credentials.  \
 
-4️⃣ Run Database
-php artisan migrate
+4️⃣ Run Database \ 
+php artisan migrate \
 php artisan db:seed   # Optional
 
-5️⃣ Run Project
-php artisan serve
-npm run dev
+5️⃣ Run Project \
+php artisan serve \
+npm run dev \
 
 
 Visit 👉 http://127.0.0.1:8000
@@ -92,14 +92,16 @@ Visit 👉 http://127.0.0.1:8000
 📱 Responsive UI
 
 ## 🧪 Tech Stack
+```
+| Layer           | Technology            |
+| --------------- | --------------------- |
+| Backend         | Laravel, PHP          |
+| Frontend        | HTML, CSS, JavaScript |
+| Database        | MySQL                 |
+| Build Tool      | Vite                  |
+| Package Manager | Composer, NPM         |
 
-Layer	Technology
-Backend	Laravel, PHP
-Frontend	HTML, CSS, JavaScript
-Database	MySQL
-Build Tool	Vite
-Package Manager	Composer, NPM
-
+```
 ## 📌 Future Improvements
 
 Payment gateway integration
