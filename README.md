@@ -106,7 +106,7 @@ Visit 👉 http://127.0.0.1:8000
 | Package Manager | Composer, NPM         |
 
 ```
-⚠️ Disclaimer (Educational Use Only)
+## ⚠️ Disclaimer (Educational Use Only)
 
 All T-shirt images, product names, and related media used in this project are sourced from chriscross.in.
 
