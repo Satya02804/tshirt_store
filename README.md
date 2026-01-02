@@ -10,7 +10,7 @@ Coming Soon
 
 
 ## tshirt_store/
-'''
+```
 ├── app/
 │   ├── Http/
 │   │   └── Controllers/        # Controllers
@@ -48,7 +48,7 @@ Coming Soon
 ├── package.json               # Node dependencies
 ├── vite.config.js             # Vite config
 └── README.md                  # Project documentation
-'''
+```
 ## ⚙️ Installation
 
 1️⃣ Clone Repository
