@@ -1,7 +1,6 @@
 # 👕 T-Shirt Store (Laravel E-Commerce)
 
 
-
 A Laravel-based T-Shirt Store web application with dynamic product listing, cart functionality, and admin management.
 
 ## 🚀 Live Demo
@@ -9,7 +8,7 @@ A Laravel-based T-Shirt Store web application with dynamic product listing, cart
 Coming Soon
 
 
-## tshirt_store/
+## 📂 Project Structure
 ```
 ├── app/
 │   ├── Http/
