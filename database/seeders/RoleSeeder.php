@@ -84,10 +84,10 @@ class RoleSeeder extends Seeder
 
         // Create Super Admin User
         $superAdminUser = User::firstOrCreate(
-            ['email' => 'patelsatya2804@gmail.com'],
+            ['email' => 'superadmin@gmail.com'],
             [
                 'name' => 'Super Admin',
-                'password' => Hash::make('satya'),
+                'password' => Hash::make('Admin@123'),
             ]
         );
 
@@ -97,7 +97,7 @@ class RoleSeeder extends Seeder
         }
 
         // Assign 'user' role to all other existing users
-        $otherUsers = User::where('email', '!=', 'patelsatya2804@gmail.com')->get();
+        $otherUsers = User::where('email', '!=', 'superadmin@gmail.com')->get();
         foreach ($otherUsers as $otherUser) {
             if (!$otherUser->hasAnyRole(['super-admin', 'admin', 'user'])) {
                 $otherUser->assignRole('user');
