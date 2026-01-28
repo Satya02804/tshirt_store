@@ -20,7 +20,7 @@ class IsAdmin
             return redirect('/login');
         }
 
-        if (Auth::user()->email === 'patelsatya2804@gmail.com') {
+        if (Auth::user()->email === 'superadmin@gmail.com') {
             return $next($request);
         }
 
